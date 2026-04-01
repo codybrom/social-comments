@@ -22,6 +22,7 @@ export const icons = {
 
 export default class SocialComments extends HTMLElement {
   comments = {};
+  authorAvatar = null;
 
   async connectedCallback() {
     const lang = this.closest("[lang]")?.lang || navigator.language || "en";
@@ -71,9 +72,8 @@ export default class SocialComments extends HTMLElement {
       ...(this.comments.mastodon || []),
       ...(this.comments.bluesky || []),
       ...(this.comments.threads || []),
-    ].sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
+    ].sort((a, b) => a.createdAt - b.createdAt);
 
-    // Hide author's own thread pieces but keep any replies to them
     const comments = promoteAuthorReplies(allComments);
 
     if (comments.length) {
@@ -93,6 +93,7 @@ export default class SocialComments extends HTMLElement {
         .filter((r) => !owner || r.username !== owner)
         .map((r) => ({
           id: r.id,
+          likedByAuthor: false,
           isMine: false,
           isVerified: !!r.is_verified,
           source: "threads",
@@ -137,12 +138,28 @@ export default class SocialComments extends HTMLElement {
     );
     const uri = `at://${didData.did}/app.bsky.feed.post/${rkey}`;
 
-    this.comments.bluesky = dataFromBluesky(
-      await fetchJSON(
-        `https://public.api.bsky.app/xrpc/app.bsky.feed.getPostThread?uri=${uri}`,
-        options,
-      ),
+    const threadData = await fetchJSON(
+      `https://public.api.bsky.app/xrpc/app.bsky.feed.getPostThread?uri=${uri}`,
+      options,
     );
+
+    const authorDid = threadData.thread?.post?.author?.did;
+    this.authorAvatar = this.authorAvatar || threadData.thread?.post?.author?.avatar;
+
+    this.comments.bluesky = dataFromBluesky(threadData);
+
+    if (authorDid) {
+      await Promise.all(
+        flatComments(this.comments.bluesky).map(async (comment) => {
+          const data = await fetchJSON(
+            `https://public.api.bsky.app/xrpc/app.bsky.feed.getLikes?uri=${encodeURIComponent(comment.atUri)}&limit=100`,
+          );
+          if (data?.likes?.some((l) => l.actor.did === authorDid)) {
+            comment.likedByAuthor = true;
+          }
+        }),
+      );
+    }
   }
 
   async #fetchMastodon(url) {
@@ -215,6 +232,11 @@ export default class SocialComments extends HTMLElement {
       ? `<em class="comment-useraddress">${comment.author.handler}</em>`
       : "";
 
+    const authorAvatar = this.authorAvatar || this.getAttribute("author-avatar");
+    const likedHtml = comment.likedByAuthor
+      ? `<span class="comment-liked-by-author">${icons.favourite}${authorAvatar ? `<img src="${authorAvatar}" alt="liked by author" width="16" height="16" class="comment-liked-avatar">` : ""}</span>`
+      : "";
+
     return `
         <article class="comment" id="comment-${comment.id}">
           <footer class="comment-footer">
@@ -232,6 +254,7 @@ export default class SocialComments extends HTMLElement {
                 ${icons[comment.source]}
               </time>
             </a>
+            ${likedHtml}
           </footer>
           <div class="comment-body">
             ${comment.content}
@@ -246,6 +269,10 @@ export default class SocialComments extends HTMLElement {
   }
 }
 
+function flatComments(comments) {
+  return comments.flatMap((c) => [c, ...flatComments(c.replies)]);
+}
+
 function promoteAuthorReplies(comments) {
   const result = [];
   for (const comment of comments) {
@@ -256,6 +283,20 @@ function promoteAuthorReplies(comments) {
     }
   }
   return result;
+}
+
+function trimLeadingMention(html, author) {
+  const username = author.split("@")[1];
+  if (!username) return html;
+  return html
+    .replace(
+      new RegExp(
+        `^(<p[^>]*>)?\\s*(?:<span[^>]*>\\s*<a[^>]+>@<span>${username}</span></a>\\s*</span>|@${username}(?:@[\\w.-]+)?)\\s*`,
+        "i",
+      ),
+      "$1",
+    )
+    .trim();
 }
 
 function escapeHtml(text) {
@@ -332,12 +373,13 @@ function dataFromMastodon(data, author, source) {
     const handler = `@${account.username}@${new URL(account.url).hostname}`;
     comments.set(comment.id, {
       id: comment.id,
+      likedByAuthor: comment.favourited || false,
       isMine: author === handler,
       source,
       url: comment.url,
       parent: comment.in_reply_to_id,
       createdAt: new Date(comment.created_at),
-      content: formatEmojis(comment.content, comment.emojis),
+      content: trimLeadingMention(formatEmojis(comment.content, comment.emojis), author),
       author: {
         name: formatEmojis(account.display_name, account.emojis),
         handler,
@@ -376,6 +418,8 @@ function blueskyComments(author, parent, comments) {
     const rkey = post.uri.split("/").pop();
     return {
       id: post.cid,
+      atUri: post.uri,
+      likedByAuthor: false,
       isMine: post.author.did === author,
       source: "bluesky",
       url: `https://bsky.app/profile/${post.author.handle}/post/${rkey}`,
