@@ -1,90 +1,139 @@
-# Mastodon comments
+# social-comments
 
-Web component to show comments from Mastodon. Inspired by the work of
-[Thiago Cerqueira](https://thiagojedi.github.io/blog/activitypub-comments/) who
-has inspired by
-[Julian Fietkau](https://fietkau.blog/2023/another_blog_resurrection_fediverse_new_comment_system),
-who has inspired by
-[Cassidy James](https://cassidyjames.com/blog/fediverse-blog-comments-mastodon/),
-who also was inspired by
-[Jan Wildeboer](https://jan.wildeboer.net/2023/02/Jekyll-Mastodon-Comments/) who
-was inspired by
-[Yidhra Farm](https://yidhra.farm/tech/jekyll/2022/01/03/mastodon-comments-for-jekyll.html),
-who was inspired by
-[Joel Chrono](https://joelchrono12.xyz/blog/how-to-add-mastodon-comments-to-jekyll-blog/)
-who was inspired by
-[Carl Schwan](https://carlschwan.eu/2020/12/29/adding-comments-to-your-static-blog-with-mastodon/).
+Web component to show comments from Mastodon, Bluesky, and Threads unified in one list, sorted chronologically.
 
-Recently I included support for Bluesky. Thanks to [Andy](https://pixelde.su/) for the idea and for [let me borrow his code](https://mastodon.gal/@pixel@desu.social/113569049052739770).
+Forked from [@oom/mastodon-comments](https://github.com/oom-components/mastodon-comments) by [Oscar Otero](https://github.com/oscarotero), with Threads support added.
 
 - No dependencies
-- Light: ~300 lines of code (including comments and spaces)
-- Follows the **progressive enhancement strategy:**
-- Build with modern javascript, using ES6 modules and custom elements
+- Light: ~350 lines of code
+- Follows the **progressive enhancement strategy**
+- Built with modern JavaScript: ES6 modules and custom elements
 
 ## Usage
 
 ### HTML
 
-Write the following HTML code with a link to a post from Mastodon and/or Bluesky:
+Pass URLs or shortcodes for whichever platforms you want:
 
 ```html
-<oom-comments
-  mastodon="https://mastodon.gal/@misteroom/110810445656343599"
-  bluesky="https://bsky.app/profile/lume.land/post/3lc3b4k2n6p2x">
-  No comments yet
-</oom-comments>
+<your-comments
+  mastodon="https://mastodon.social/@you/123456789"
+  bluesky="https://bsky.app/profile/you.bsky.social/post/abc123"
+  threads="Abc123XyZ"
+  threads-owner="yourusername"
+>
+  No comments yet.
+</your-comments>
 ```
 
 ### JS
 
-Register the custom element:
+Register the custom element with whatever name you prefer:
 
 ```js
-import Comments from "./mastodon-comments/comments.js";
+import SocialComments from "@codybrom/social-comments/src/comments.js";
 
-//Register the custom element with your desired name
-customElements.define("oom-comments", Comments);
+customElements.define("your-comments", SocialComments);
 ```
 
 ### CSS
 
-Import the CSS code from this package or create your own.
+Import the CSS from the original package or write your own:
 
 ```css
-@import "./mastodom-comments/styles.css";
+@import "@oom/mastodon-comments/src/styles.css";
+```
+
+## Threads support
+
+Threads requires an authenticated API token, so comments can't be fetched directly from the browser. You need a small server-side proxy that holds your credentials.
+
+### The `threads` attribute
+
+Pass the shortcode from the end of your Threads post URL:
+
+```
+https://www.threads.net/@you/post/Abc123XyZ
+                                   ^^^^^^^^^ this part
+```
+
+### The `threads-owner` attribute
+
+Your Threads username (without `@`). Replies from this account are filtered out, since the post author's own follow-up replies are usually noise.
+
+### The `threads-api` attribute
+
+The URL of your proxy endpoint. Defaults to `/api/threads-comments`. Override if your proxy lives elsewhere:
+
+```html
+<your-comments
+  threads="Abc123XyZ"
+  threads-api="https://api.example.com/threads-proxy"
+>
+</your-comments>
+```
+
+### Setting up the proxy
+
+The proxy receives `GET /api/threads-comments?shortcode=<shortcode>` and returns an array of reply objects from the Threads API.
+
+An example [Cloudflare Pages Function](https://developers.cloudflare.com/pages/functions/) is included in [`examples/cloudflare-pages/threads-comments.ts`](./examples/cloudflare-pages/threads-comments.ts). Copy it to `functions/api/threads-comments.ts` in your Pages project and set these environment variables in the Cloudflare dashboard:
+
+| Variable | Description |
+|---|---|
+| `THREAD_TOKEN` | Threads long-lived access token |
+| `THREADS_ACCOUNT_ID` | Your numeric Threads account ID |
+| `THREADS_USERNAME` | Your Threads username (for filtering) |
+
+To get these values, create a [Meta for Developers](https://developers.facebook.com/apps/) app with the Threads API product. The long-lived token is valid for 60 days and can be refreshed programmatically.
+
+## Verified badges
+
+Threads accounts with `is_verified: true` get a blue checkmark badge rendered next to their username.
+
+## All attributes
+
+| Attribute | Description |
+|---|---|
+| `mastodon` or `src` | URL of a Mastodon/Pleroma post |
+| `bluesky` | URL of a Bluesky post |
+| `threads` | Shortcode of a Threads post |
+| `threads-owner` | Threads username to exclude from replies |
+| `threads-api` | Proxy endpoint URL (default: `/api/threads-comments`) |
+| `cache` | Cache TTL in seconds for Mastodon/Bluesky responses |
+| `token` | Mastodon API token (for private instances) |
+
+## Cache
+
+Use the `cache` attribute to cache Mastodon and Bluesky API responses. Threads responses are cached by your proxy's `Cache-Control` header.
+
+```html
+<your-comments cache="60" mastodon="...">
+  No comments yet.
+</your-comments>
 ```
 
 ## Customization
 
-You can customize the HTML code generated by overriding the default
-`renderComment` static function:
+Override `renderComment` in a subclass to customize the HTML:
 
 ```js
-import Comments from "./mastodon-comments/comments.js";
+import SocialComments from "@codybrom/social-comments/src/comments.js";
 
-// Customize the HTML rendering
-class CustomComments extends Comments {
+class CustomComments extends SocialComments {
   renderComment(comment) {
-    // your render here
+    // comment.source is "mastodon", "pleroma", "bluesky", or "threads"
+    // comment.isVerified is true for verified Threads accounts
+    return `<div>${comment.author.name}: ${comment.content}</div>`;
   }
-};
+}
 
-//Register the custom element with your desired name
-customElements.define("oom-comments", CustomComments);
+customElements.define("your-comments", CustomComments);
 ```
 
-## Cache
+## Credits
 
-Use the `cache` attribute to cache the API responses. It accepts a number with
-the time in seconds. The cache is also used offline.
-
-```html
-<!-- Cache for 1 minute (60 seconds) -->
-<oom-comments
-  cache="60"
-  mastodon="https://mastodon.gal/@misteroom/110810445656343599"
->
-  No comments yet.
-</oom-comments>
-```
+- Original `mastodon-comments` component by [Oscar Otero](https://github.com/oscarotero) / [oom-components](https://github.com/oom-components)
+- Bluesky support originally contributed by [Andy](https://pixelde.su/)
+- Threads support by [Cody Bromley](https://github.com/codybrom)
+- Icons: [Phosphor Icons](https://phosphoricons.com/), [Simple Icons](https://simpleicons.org/), [Font Awesome Free](https://fontawesome.com/) (CC BY 4.0)

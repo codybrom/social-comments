@@ -1,15 +1,16 @@
 {
-  "name": "@oom/mastodon-comments",
-  "version": "0.3.2",
-  "description": "Web component to show comments from Mastodon and Bluesky",
+  "name": "@codybrom/social-comments",
+  "version": "0.4.0",
+  "description": "Web component to show comments from Mastodon, Bluesky, and Threads",
   "browser": "src/comments.js",
   "modules.root": "src",
   "files": [
-    "src"
+    "src",
+    "examples"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/oom-components/mastodon-comments.git"
+    "url": "git+https://github.com/codybrom/social-comments.git"
   },
   "keywords": [
     "progressive",
@@ -17,15 +18,20 @@
     "component",
     "mastodon",
     "bluesky",
+    "threads",
     "comments",
     "pleroma",
+    "fediverse",
     "custom element",
     "es6"
   ],
-  "author": "Oscar Otero <oom@oscarotero.com>",
+  "author": "Cody Bromley <cody@codybromley.com>",
+  "contributors": [
+    "Oscar Otero <oom@oscarotero.com>"
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/oom-components/mastodon-comments/issues"
+    "url": "https://github.com/codybrom/social-comments/issues"
   },
-  "homepage": "https://github.com/oom-components/mastodon-comments#readme"
+  "homepage": "https://github.com/codybrom/social-comments#readme"
 }
