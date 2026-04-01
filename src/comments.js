@@ -4,27 +4,26 @@
 
 // © https://phosphoricons.com/
 export const icons = {
-  reblog: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="24"><polyline points="200 88 224 64 200 40"/><path d="M32,128A64,64,0,0,1,96,64H224"/><polyline points="56 168 32 192 56 216"/><path d="M224,128a64,64,0,0,1-64,64H32"/></svg>`,
-  favourite: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" fill="currentColor"><path d="M240,94c0,70-103.79,126.66-108.21,129a8,8,0,0,1-7.58,0C119.79,220.66,16,164,16,94A62.07,62.07,0,0,1,78,32c20.65,0,38.73,8.88,50,23.89C139.27,40.88,157.35,32,178,32A62.07,62.07,0,0,1,240,94Z"/></svg>`,
-  author: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512" fill="currentColor" class="comment-author"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>`,
-  verified: `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 512 512" fill="#0095F6" style="display:inline-block;vertical-align:middle;margin-left:2px"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>`,
+  reblog: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M150.6 105.4C138.1 92.9 117.8 92.9 105.3 105.4L41.3 169.4C32.1 178.6 29.4 192.3 34.4 204.3C39.4 216.3 51.1 224 64 224L96 224L96 448C96 501 139 544 192 544L320 544C337.7 544 352 529.7 352 512C352 494.3 337.7 480 320 480L192 480C174.3 480 160 465.7 160 448L160 224L192 224C204.9 224 216.6 216.2 221.6 204.2C226.6 192.2 223.8 178.5 214.7 169.3L150.7 105.3zM489.4 534.6C501.9 547.1 522.2 547.1 534.7 534.6L598.7 470.6C607.9 461.4 610.6 447.7 605.6 435.7C600.6 423.7 588.9 416 576 416L544 416L544 192C544 139 501 96 448 96L320 96C302.3 96 288 110.3 288 128C288 145.7 302.3 160 320 160L448 160C465.7 160 480 174.3 480 192L480 416L448 416C435.1 416 423.4 423.8 418.4 435.8C413.4 447.8 416.2 461.5 425.3 470.7L489.3 534.7z"/></svg>`,
+  favourite: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M305 151.1L320 171.8L335 151.1C360 116.5 400.2 96 442.9 96C516.4 96 576 155.6 576 229.1L576 231.7C576 343.9 436.1 474.2 363.1 529.9C350.7 539.3 335.5 544 320 544C304.5 544 289.2 539.4 276.9 529.9C203.9 474.2 64 343.9 64 231.7L64 229.1C64 155.6 123.6 96 197.1 96C239.8 96 280 116.5 305 151.1z"/></svg>`,
+  author: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512" fill="currentColor" class="comment-author"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M416.9 85.2L372 130.1L509.9 268L554.8 223.1C568.4 209.6 576 191.2 576 172C576 152.8 568.4 134.4 554.8 120.9L519.1 85.2C505.6 71.6 487.2 64 468 64C448.8 64 430.4 71.6 416.9 85.2zM338.1 164L122.9 379.1C112.2 389.8 104.4 403.2 100.3 417.8L64.9 545.6C62.6 553.9 64.9 562.9 71.1 569C77.3 575.1 86.2 577.5 94.5 575.2L222.3 539.7C236.9 535.6 250.2 527.9 261 517.1L476 301.9L338.1 164z"/></svg>`,
+  verified: `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#0095F6" viewBox="0 0 640 640" style="display:inline-block;vertical-align:middle;margin-left:2px"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M320 576C178.6 576 64 461.4 64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576zM438 209.7C427.3 201.9 412.3 204.3 404.5 215L285.1 379.2L233 327.1C223.6 317.7 208.4 317.7 199.1 327.1C189.8 336.5 189.7 351.7 199.1 361L271.1 433C276.1 438 282.9 440.5 289.9 440C296.9 439.5 303.3 435.9 307.4 430.2L443.3 243.2C451.1 232.5 448.7 217.5 438 209.7z"/></svg>`,
+  mastodon: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M529 243.1C529 145.9 465.3 117.4 465.3 117.4C402.8 88.7 236.7 89 174.8 117.4C174.8 117.4 111.1 145.9 111.1 243.1C111.1 358.8 104.5 502.5 216.7 532.2C257.2 542.9 292 545.2 320 543.6C370.8 540.8 399.3 525.5 399.3 525.5L397.6 488.6C397.6 488.6 361.3 500 320.5 498.7C280.1 497.3 237.5 494.3 230.9 444.7C230.3 440.1 230 435.4 230 430.8C315.6 451.7 388.7 439.9 408.7 437.5C464.8 430.8 513.7 396.2 519.9 364.6C529.7 314.8 528.9 243.1 528.9 243.1zM453.9 368.3L407.3 368.3L407.3 254.1C407.3 204.4 343.3 202.5 343.3 261L343.3 323.5L297 323.5L297 261C297 202.5 233 204.4 233 254.1L233 368.3L186.3 368.3C186.3 246.2 181.1 220.4 204.7 193.3C230.6 164.4 284.5 162.5 308.5 199.4L320.1 218.9L331.7 199.4C355.8 162.3 409.8 164.6 435.5 193.3C459.2 220.6 453.9 246.3 453.9 368.3L453.9 368.3z"/></svg>`,
 
-  // @ https://simpleicons.org/
-  mastodon: `<svg role="img" width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Mastodon</title><path d="M23.268 5.313c-.35-2.578-2.617-4.61-5.304-5.004C17.51.242 15.792 0 11.813 0h-.03c-3.98 0-4.835.242-5.288.309C3.882.692 1.496 2.518.917 5.127.64 6.412.61 7.837.661 9.143c.074 1.874.088 3.745.26 5.611.118 1.24.325 2.47.62 3.68.55 2.237 2.777 4.098 4.96 4.857 2.336.792 4.849.923 7.256.38.265-.061.527-.132.786-.213.585-.184 1.27-.39 1.774-.753a.057.057 0 0 0 .023-.043v-1.809a.052.052 0 0 0-.02-.041.053.053 0 0 0-.046-.01 20.282 20.282 0 0 1-4.709.545c-2.73 0-3.463-1.284-3.674-1.818a5.593 5.593 0 0 1-.319-1.433.053.053 0 0 1 .066-.054c1.517.363 3.072.546 4.632.546.376 0 .75 0 1.125-.01 1.57-.044 3.224-.124 4.768-.422.038-.008.077-.015.11-.024 2.435-.464 4.753-1.92 4.989-5.604.008-.145.03-1.52.03-1.67.002-.512.167-3.63-.024-5.545zm-3.748 9.195h-2.561V8.29c0-1.309-.55-1.976-1.67-1.976-1.23 0-1.846.79-1.846 2.35v3.403h-2.546V8.663c0-1.56-.617-2.35-1.848-2.35-1.112 0-1.668.668-1.67 1.977v6.218H4.822V8.102c0-1.31.337-2.35 1.011-3.12.696-.77 1.608-1.164 2.74-1.164 1.311 0 2.302.5 2.962 1.498l.638 1.06.638-1.06c.66-.999 1.65-1.498 2.96-1.498 1.13 0 2.043.395 2.74 1.164.675.77 1.012 1.81 1.012 3.12z"/></svg>`,
+  pleroma: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 209 334"><path d="M83 0v334H0V26l26-26z"/><circle r="26" cx="26" cy="26"/><circle r="26" cx="183" cy="141"/><path d="M125 167V0h84v141l-26 26z"/><circle r="26" cx="183" cy="308"/><path d="M125 334v-83h84v57l-26 26z"/></svg>`,
 
-  pleroma: `<svg role="img" width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Pleroma</title><path d="M6.36 0A1.868 1.868 0 004.49 1.868V24h5.964V0zm7.113 0v12h4.168a1.868 1.868 0 001.868-1.868V0zm0 18.036V24h4.168a1.868 1.868 0 001.868-1.868v-4.096Z"/></svg>`,
+  bluesky: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M439.8 358.7C436.5 358.3 433.1 357.9 429.8 357.4C433.2 357.8 436.5 358.3 439.8 358.7zM320 291.1C293.9 240.4 222.9 145.9 156.9 99.3C93.6 54.6 69.5 62.3 53.6 69.5C35.3 77.8 32 105.9 32 122.4C32 138.9 41.1 258 47 277.9C66.5 343.6 136.1 365.8 200.2 358.6C203.5 358.1 206.8 357.7 210.2 357.2C206.9 357.7 203.6 358.2 200.2 358.6C106.3 372.6 22.9 406.8 132.3 528.5C252.6 653.1 297.1 501.8 320 425.1C342.9 501.8 369.2 647.6 505.6 528.5C608 425.1 533.7 372.5 439.8 358.6C436.5 358.2 433.1 357.8 429.8 357.3C433.2 357.7 436.5 358.2 439.8 358.6C503.9 365.7 573.4 343.5 593 277.9C598.9 258 608 139 608 122.4C608 105.8 604.7 77.7 586.4 69.5C570.6 62.4 546.4 54.6 483.2 99.3C417.1 145.9 346.1 240.4 320 291.1z"/></svg>`,
 
-  bluesky: `<svg role="img" width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Bluesky</title><path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.039.415-.056-.138.022-.276.04-.415.056-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.87-1.113 7.823-4.308.953 3.195 2.05 9.271 7.733 4.308 4.267-4.308 1.172-6.498-2.74-7.078a8.741 8.741 0 0 1-.415-.056c.14.017.279.036.415.056 2.67.297 5.568-.628 6.383-3.364.246-.828.624-5.79.624-6.478 0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8Z"/></svg>`,
-
-  // Font Awesome Free 6.7.2 - CC BY 4.0 - https://fontawesome.com
-  threads: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 448 512" fill="currentColor"><path d="M331.5 235.7c2.2 .9 4.2 1.9 6.3 2.8c29.2 14.1 50.6 35.2 61.8 61.4c15.7 36.5 17.2 95.8-30.3 143.2c-36.2 36.2-80.3 52.5-142.6 53h-.3c-70.2-.5-124.1-24.1-160.4-70.2c-32.3-41-48.9-98.1-49.5-169.6V256v-.2C17 184.3 33.6 127.2 65.9 86.2C102.2 40.1 156.2 16.5 226.4 16h.3c70.3 .5 124.9 24 162.3 69.9c18.4 22.7 32 50 40.6 81.7l-40.4 10.8c-7.1-25.8-17.8-47.8-32.2-65.4c-29.2-35.8-73-54.2-130.5-54.6c-57 .5-100.1 18.8-128.2 54.4C72.1 146.1 58.5 194.3 58 256c.5 61.7 14.1 109.9 40.3 143.3c28 35.6 71.2 53.9 128.2 54.4c51.4-.4 85.4-12.6 113.7-40.9c32.3-32.2 31.7-71.8 21.4-95.9c-6.1-14.2-17.1-26-31.9-34.9c-3.7 26.9-11.8 48.3-24.7 64.8c-17.1 21.8-41.4 33.6-72.7 35.3c-23.6 1.3-46.3-4.4-63.9-16c-20.8-13.8-33-34.8-34.3-59.3c-2.5-48.3 35.7-83 95.2-86.4c21.1-1.2 40.9-.3 59.2 2.8c-2.4-14.8-7.3-26.6-14.6-35.2c-10-11.7-25.6-17.7-46.2-17.8H227c-16.6 0-39 4.6-53.3 26.3l-34.4-23.6c19.2-29.1 50.3-45.1 87.8-45.1h.8c62.6 .4 99.9 39.5 103.7 107.7l-.2 .2zm-156 68.8c1.3 25.1 28.4 36.8 54.6 35.3c25.6-1.4 54.6-11.4 59.5-73.2c-13.2-2.9-27.8-4.4-43.4-4.4c-4.8 0-9.6 .1-14.4 .4c-42.9 2.4-57.2 23.2-56.2 41.8l-.1 .1z"/></svg>`,
+  threads: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M427.5 299.7C429.7 300.6 431.7 301.6 433.8 302.5C463 316.6 484.4 337.7 495.6 363.9C511.3 400.4 512.8 459.7 465.3 507.1C429.1 543.3 385 559.6 322.7 560.1L322.4 560.1C252.2 559.6 198.3 536 162 489.9C129.7 448.9 113.1 391.8 112.5 320.3L112.5 319.8C113 248.3 129.6 191.2 161.9 150.2C198.2 104.1 252.2 80.5 322.4 80L322.7 80C393 80.5 447.6 104 485 149.9C503.4 172.6 517 199.9 525.6 231.6L485.2 242.4C478.1 216.6 467.4 194.6 453 177C423.8 141.2 380 122.8 322.5 122.4C265.5 122.9 222.4 141.2 194.3 176.8C168.1 210.1 154.5 258.3 154 320C154.5 381.7 168.1 429.9 194.3 463.3C222.3 498.9 265.5 517.2 322.5 517.7C373.9 517.3 407.9 505.1 436.2 476.8C468.5 444.6 467.9 405 457.6 380.9C451.5 366.7 440.5 354.9 425.7 346C422 372.9 413.9 394.3 401 410.8C383.9 432.6 359.6 444.4 328.3 446.1C304.7 447.4 282 441.7 264.4 430.1C243.6 416.3 231.4 395.3 230.1 370.8C227.6 322.5 265.8 287.8 325.3 284.4C346.4 283.2 366.2 284.1 384.5 287.2C382.1 272.4 377.2 260.6 369.9 252C359.9 240.3 344.3 234.3 323.7 234.2L323 234.2C306.4 234.2 284 238.8 269.7 260.5L235.3 236.9C254.5 207.8 285.6 191.8 323.1 191.8L323.9 191.8C386.5 192.2 423.8 231.3 427.6 299.5L427.4 299.7L427.5 299.7zM271.5 368.5C272.8 393.6 299.9 405.3 326.1 403.8C351.7 402.4 380.7 392.4 385.6 330.6C372.4 327.7 357.8 326.2 342.2 326.2C337.4 326.2 332.6 326.3 327.8 326.6C284.9 329 270.6 349.8 271.6 368.4L271.5 368.5z"/></svg>`,
 };
 
 export default class SocialComments extends HTMLElement {
   comments = {};
   authorAvatar = null;
+  postStats = {};
 
   async connectedCallback() {
+    this.textContent = "Loading replies\u2026";
     const lang = this.closest("[lang]")?.lang || navigator.language || "en";
 
     this.dateTimeFormatter = new Intl.DateTimeFormat(lang, {
@@ -35,8 +34,6 @@ export default class SocialComments extends HTMLElement {
     const mastodon = this.getAttribute("mastodon") || this.getAttribute("src");
     const bluesky = this.getAttribute("bluesky");
     const threadsAttr = this.getAttribute("threads");
-    const threadsApi =
-      this.getAttribute("threads-api") || "/api/threads-comments";
 
     let threads = null;
     let autoOwner = null;
@@ -57,6 +54,8 @@ export default class SocialComments extends HTMLElement {
     }
 
     const threadsOwner = this.getAttribute("threads-owner") || autoOwner;
+    const threadsApi =
+      this.getAttribute("threads-api") || "/api/threads-comments";
 
     await Promise.all([
       mastodon && this.#fetchMastodon(new URL(mastodon)),
@@ -74,33 +73,123 @@ export default class SocialComments extends HTMLElement {
       ...(this.comments.threads || []),
     ].sort((a, b) => a.createdAt - b.createdAt);
 
-    const comments = promoteAuthorReplies(allComments);
+    const comments = promoteAuthorReplies(allComments).sort(
+      (a, b) => a.createdAt - b.createdAt,
+    );
 
+    this.innerHTML = "";
+    this.#renderPostStats();
     if (comments.length) {
-      this.innerHTML = "";
+      this.style.display = "";
       this.render(this, comments);
+    } else {
+      this.style.display = "none";
     }
+  }
+
+  #renderPostStats() {
+    const order = ["threads", "bluesky", "mastodon"];
+    const stats = order
+      .filter((k) => this.postStats[k])
+      .map((k) => this.postStats[k]);
+    if (!stats.length) return;
+
+    const colors = {
+      threads: "currentColor",
+      bluesky: "#0085FF",
+      mastodon: "#6364FF",
+    };
+    const names = {
+      threads: "Threads",
+      bluesky: "Bluesky",
+      mastodon: "Mastodon",
+    };
+
+    // Build reply intent URLs
+    const replyUrls = {};
+    const threadsAttr = this.getAttribute("threads");
+    if (threadsAttr) {
+      try {
+        const m = new URL(threadsAttr).pathname.match(
+          /\/post\/([A-Za-z0-9_-]+)/,
+        );
+        if (m)
+          replyUrls.threads = `https://www.threads.com/intent/post?reply_post_shortcode=${m[1]}`;
+      } catch {
+        replyUrls.threads = `https://www.threads.com/intent/post?reply_post_shortcode=${threadsAttr}`;
+      }
+    }
+    replyUrls.bluesky = this.getAttribute("bluesky");
+    replyUrls.mastodon =
+      this.getAttribute("mastodon") || this.getAttribute("src");
+
+    const cards = order
+      .filter((k) => this.postStats[k] || replyUrls[k])
+      .map((k) => {
+        const color = colors[k];
+        const name = names[k];
+        const s = this.postStats[k];
+        const url = replyUrls[k] || s?.url || "#";
+        const statParts = [];
+        if (s?.likes) statParts.push(`${icons.favourite}&nbsp;${s.likes}`);
+        if (s?.reposts) statParts.push(`${icons.reblog}&nbsp;${s.reposts}`);
+        const statsRow = statParts.length
+          ? `<div style="display:flex;gap:8px;opacity:0.6;font-size:0.8em">${statParts.join("")}</div>`
+          : "";
+        return `<div style="flex:1;min-width:130px;display:flex;flex-direction:column;justify-content:space-between;gap:6px;padding:10px 14px;border-radius:8px;border:1px solid color-mix(in srgb,${color} 25%,transparent)">
+          <span style="display:flex;align-items:center;gap:5px;font-size:0.85em;font-weight:600">${icons[k]} ${name}</span>
+          ${statsRow}
+          <a href="${url}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:4px;color:${color};text-decoration:none;font-size:0.8em;font-weight:600;margin-top:auto">Reply&nbsp;→</a>
+        </div>`;
+      });
+
+    // Hide the old "Reply on..." text and insert share section before comments
+    const section = this.closest(".comments-section") || this.parentElement;
+    const headerP = section?.querySelector(".comments-header p");
+    if (headerP) headerP.style.display = "none";
+
+    const shareSection = document.createElement("div");
+    shareSection.className = "post-share-section";
+    shareSection.style.cssText = "margin:12px 0 20px";
+    shareSection.innerHTML = `<div style="display:flex;gap:8px;flex-wrap:wrap">${cards.join("")}</div>`;
+    this.parentElement.insertBefore(shareSection, this);
   }
 
   async #fetchThreads(shortcode, owner, apiEndpoint) {
     try {
       const res = await fetch(`${apiEndpoint}?shortcode=${shortcode}`);
       if (!res.ok) return;
-      const replies = await res.json();
+      const data = await res.json();
+      const replies = data.replies || data;
 
-      this.comments.threads = replies
-        .filter((r) => r.hide_status !== "HIDDEN")
-        .filter((r) => !owner || r.username !== owner)
-        .map((r) => ({
+      if (data.stats) {
+        this.postStats.threads = {
+          url: this.getAttribute("threads"),
+          likes: data.stats.likes || 0,
+          reposts: (data.stats.reposts || 0) + (data.stats.quotes || 0),
+          source: "threads",
+        };
+      }
+
+      // Build a tree from the flat reply list using replied_to
+      const mediaId = data.mediaId;
+      const commentMap = new Map();
+
+      for (const r of replies.filter((r) => r.hide_status !== "HIDDEN")) {
+        commentMap.set(r.id, {
           id: r.id,
           likedByAuthor: false,
-          isMine: false,
+          isMine: !!owner && r.username === owner,
           isVerified: !!r.is_verified,
           source: "threads",
           url: r.permalink || `https://www.threads.net/@${r.username}`,
-          parent: null,
+          parent: r.replied_to?.id || null,
           createdAt: new Date(r.timestamp),
-          content: escapeHtml(r.text || ""),
+          content:
+            escapeHtml(r.text || "") +
+            (r.media_type && r.media_type !== "TEXT_POST"
+              ? ` <a href="${r.permalink}" class="comment-media-link">[See original for attached media]</a>`
+              : ""),
           author: {
             name: `@${r.username}`,
             handler: "",
@@ -111,9 +200,24 @@ export default class SocialComments extends HTMLElement {
           boosts: 0,
           likes: 0,
           replies: [],
-        }));
+        });
+      }
+
+      // Link children to parents; top-level = replies to the original post
+      for (const comment of commentMap.values()) {
+        const parentComment = commentMap.get(comment.parent);
+        if (parentComment) {
+          parentComment.replies.push(comment);
+        }
+      }
+
+      const topLevel = Array.from(commentMap.values()).filter(
+        (c) => !c.parent || c.parent === mediaId || !commentMap.has(c.parent),
+      );
+
+      this.comments.threads = topLevel;
     } catch {
-      // Silently fail — Threads proxy may not be configured
+      // Silently fail
     }
   }
 
@@ -143,8 +247,18 @@ export default class SocialComments extends HTMLElement {
       options,
     );
 
-    const authorDid = threadData.thread?.post?.author?.did;
-    this.authorAvatar = this.authorAvatar || threadData.thread?.post?.author?.avatar;
+    const threadPost = threadData.thread?.post;
+    const authorDid = threadPost?.author?.did;
+    this.authorAvatar = this.authorAvatar || threadPost?.author?.avatar;
+
+    if (threadPost) {
+      this.postStats.bluesky = {
+        url,
+        likes: threadPost.likeCount || 0,
+        reposts: threadPost.repostCount || 0,
+        source: "bluesky",
+      };
+    }
 
     this.comments.bluesky = dataFromBluesky(threadData);
 
@@ -191,18 +305,36 @@ export default class SocialComments extends HTMLElement {
     const user = url.pathname.split("/")[1];
     const author = `${user}@${url.hostname}`;
 
-    const comments = dataFromMastodon(
-      await fetchJSON(
-        new URL(`${origin}/api/v1/statuses/${id}/context`),
-        options,
-      ),
-      author,
-      source,
-    );
+    const [contextData, statusData] = await Promise.all([
+      fetchJSON(new URL(`${origin}/api/v1/statuses/${id}/context`), options),
+      fetchJSON(new URL(`${origin}/api/v1/statuses/${id}`), options),
+    ]);
+
+    if (statusData) {
+      this.postStats.mastodon = {
+        url,
+        likes: statusData.favourites_count || 0,
+        reposts: statusData.reblogs_count || 0,
+        source: "mastodon",
+      };
+    }
+
+    const comments = dataFromMastodon(contextData, author, source);
 
     this.comments.mastodon = comments.filter(
       (comment) => comment.parent === id,
     );
+
+    const favoritedIds = await fetchJSON(
+      `/api/mastodon-favorites?origin=${encodeURIComponent(origin)}&id=${id}`,
+    );
+    if (Array.isArray(favoritedIds) && favoritedIds.length) {
+      for (const comment of flatComments(this.comments.mastodon)) {
+        if (favoritedIds.includes(comment.id)) {
+          comment.likedByAuthor = true;
+        }
+      }
+    }
   }
 
   render(container, replies) {
@@ -224,7 +356,7 @@ export default class SocialComments extends HTMLElement {
   renderComment(comment) {
     const hasAvatar = comment.author.avatar;
     const avatarHtml = hasAvatar
-      ? `<img class="comment-avatar" src="${comment.author.avatar}" alt="${comment.author.alt}'s avatar" width="200" height="200">`
+      ? `<img class="comment-avatar" src="${comment.author.avatar}" alt="${comment.author.alt}'s avatar" width="200" height="200"${comment.isMine ? ` style="border:2px solid currentColor;border-radius:50%"` : ""}>`
       : "";
 
     const verifiedHtml = comment.isVerified ? icons.verified : "";
@@ -232,17 +364,25 @@ export default class SocialComments extends HTMLElement {
       ? `<em class="comment-useraddress">${comment.author.handler}</em>`
       : "";
 
-    const authorAvatar = this.authorAvatar || this.getAttribute("author-avatar");
-    const likedHtml = comment.likedByAuthor
-      ? `<span class="comment-liked-by-author">${icons.favourite}${authorAvatar ? `<img src="${authorAvatar}" alt="liked by author" width="16" height="16" class="comment-liked-avatar">` : ""}</span>`
+    const authorAvatar =
+      this.authorAvatar || this.getAttribute("author-avatar");
+    const otherLikes =
+      comment.likedByAuthor && comment.likes > 0
+        ? comment.likes - 1
+        : comment.likes;
+    const likedChip = comment.likedByAuthor
+      ? `<span class="comment-liked-by-author" style="display:inline-flex;align-items:center;gap:3px;padding:2px 6px 2px 4px;border-radius:999px;border:1px solid color-mix(in srgb,currentColor 30%,transparent)">${icons.favourite}${authorAvatar ? `<img src="${authorAvatar}" alt="liked by author" width="16" height="16" style="border-radius:50%;object-fit:cover">` : ""}</span>`
       : "";
 
     return `
         <article class="comment" id="comment-${comment.id}">
           <footer class="comment-footer">
             <a href="${comment.author.url}" class="comment-user">
-              ${avatarHtml}
-              ${comment.isMine ? icons.author : ""}
+              ${
+                comment.isMine && hasAvatar
+                  ? `<span style="position:relative;display:inline-block">${avatarHtml}<span style="position:absolute;bottom:-2px;right:-2px;background:var(--color-background,#1a1a2e);border-radius:50%;padding:2px;line-height:0">${icons.author}</span></span>`
+                  : avatarHtml
+              }
               <strong class="comment-username">
                 ${comment.author.name}${verifiedHtml}
               </strong>
@@ -254,14 +394,15 @@ export default class SocialComments extends HTMLElement {
                 ${icons[comment.source]}
               </time>
             </a>
-            ${likedHtml}
           </footer>
           <div class="comment-body">
             ${comment.content}
 
             <p class="comment-counts">
+              <a href="${comment.url}" target="_blank" rel="noopener" class="comment-reply-link" style="opacity:0.5;text-decoration:none;font-size:0.85em;color:inherit" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Reply on ${comment.source[0].toUpperCase() + comment.source.slice(1)}</a>
               ${comment.boosts ? `<span>${icons.reblog} ${comment.boosts}</span>` : ""}
-              ${comment.likes ? `<span>${icons.favourite} ${comment.likes}</span>` : ""}
+              ${otherLikes ? `<span>${icons.favourite} ${otherLikes}</span>` : ""}
+              ${likedChip}
             </p>
           </div>
         </article>
@@ -273,13 +414,18 @@ function flatComments(comments) {
   return comments.flatMap((c) => [c, ...flatComments(c.replies)]);
 }
 
-function promoteAuthorReplies(comments) {
+function promoteAuthorReplies(comments, inAuthorChain = true) {
   const result = [];
   for (const comment of comments) {
-    if (comment.isMine) {
-      result.push(...promoteAuthorReplies(comment.replies));
+    if (comment.isMine && inAuthorChain) {
+      // Thread continuation — hide it but promote its children
+      result.push(...promoteAuthorReplies(comment.replies, true));
     } else {
-      result.push({ ...comment, replies: promoteAuthorReplies(comment.replies) });
+      // Keep — once inside a non-author comment, all replies (including author's) stay
+      result.push({
+        ...comment,
+        replies: promoteAuthorReplies(comment.replies, false),
+      });
     }
   }
   return result;
@@ -288,6 +434,8 @@ function promoteAuthorReplies(comments) {
 function trimLeadingMention(html, author) {
   const username = author.split("@")[1];
   if (!username) return html;
+  // Mastodon wraps mentions in <span class="h-card"><a ...>@<span>username</span></a></span>
+  // Also handles plain-text @username or @username@domain at the start
   return html
     .replace(
       new RegExp(
@@ -330,10 +478,10 @@ async function fetchJSON(url, options = {}) {
   }
 
   if (typeof caches === "undefined") {
-    return await (await fetch(url, { headers })).json();
+    return await (await fetch(url), { headers }).json();
   }
 
-  const cache = await caches.open("social-comments");
+  const cache = await caches.open("mastodon-comments");
   let cached = await cache.match(url);
 
   if (cached && options.ttl) {
@@ -379,7 +527,10 @@ function dataFromMastodon(data, author, source) {
       url: comment.url,
       parent: comment.in_reply_to_id,
       createdAt: new Date(comment.created_at),
-      content: trimLeadingMention(formatEmojis(comment.content, comment.emojis), author),
+      content: trimLeadingMention(
+        formatEmojis(comment.content, comment.emojis),
+        author,
+      ),
       author: {
         name: formatEmojis(account.display_name, account.emojis),
         handler,
