@@ -19,8 +19,7 @@ Pass URLs or shortcodes for whichever platforms you want:
 <your-comments
   mastodon="https://mastodon.social/@you/123456789"
   bluesky="https://bsky.app/profile/you.bsky.social/post/abc123"
-  threads="Abc123XyZ"
-  threads-owner="yourusername"
+  threads="https://www.threads.net/@you/post/Abc123XyZ"
 >
   No comments yet.
 </your-comments>
@@ -50,16 +49,17 @@ Threads requires an authenticated API token, so comments can't be fetched direct
 
 ### The `threads` attribute
 
-Pass the shortcode from the end of your Threads post URL:
+Pass the full URL of your Threads post. The component automatically parses the shortcode and the author's username from the URL:
 
 ```
 https://www.threads.net/@you/post/Abc123XyZ
-                                   ^^^^^^^^^ this part
 ```
+
+A bare shortcode also works as a fallback, but you'll need to set `threads-owner` separately in that case.
 
 ### The `threads-owner` attribute
 
-Your Threads username (without `@`). Replies from this account are filtered out, since the post author's own follow-up replies are usually noise.
+Your Threads username (without `@`). Replies from this account are filtered out. When `threads` is a full URL, the username is parsed automatically — this attribute is only needed when passing a bare shortcode.
 
 ### The `threads-api` attribute
 
@@ -97,8 +97,8 @@ Threads accounts with `is_verified: true` get a blue checkmark badge rendered ne
 |---|---|
 | `mastodon` or `src` | URL of a Mastodon/Pleroma post |
 | `bluesky` | URL of a Bluesky post |
-| `threads` | Shortcode of a Threads post |
-| `threads-owner` | Threads username to exclude from replies |
+| `threads` | Full URL of a Threads post (username parsed automatically) |
+| `threads-owner` | Threads username to exclude (auto-parsed from URL; only needed for bare shortcodes) |
 | `threads-api` | Proxy endpoint URL (default: `/api/threads-comments`) |
 | `cache` | Cache TTL in seconds for Mastodon/Bluesky responses |
 | `token` | Mastodon API token (for private instances) |

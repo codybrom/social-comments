@@ -33,10 +33,29 @@ export default class SocialComments extends HTMLElement {
 
     const mastodon = this.getAttribute("mastodon") || this.getAttribute("src");
     const bluesky = this.getAttribute("bluesky");
-    const threads = this.getAttribute("threads");
-    const threadsOwner = this.getAttribute("threads-owner");
+    const threadsAttr = this.getAttribute("threads");
     const threadsApi =
       this.getAttribute("threads-api") || "/api/threads-comments";
+
+    let threads = null;
+    let autoOwner = null;
+
+    if (threadsAttr) {
+      try {
+        const threadsUrl = new URL(threadsAttr);
+        const match = threadsUrl.pathname.match(
+          /^\/@([\w.]+)\/post\/([A-Za-z0-9_-]+)/,
+        );
+        if (match) {
+          autoOwner = match[1];
+          threads = match[2];
+        }
+      } catch {
+        threads = threadsAttr;
+      }
+    }
+
+    const threadsOwner = this.getAttribute("threads-owner") || autoOwner;
 
     await Promise.all([
       mastodon && this.#fetchMastodon(new URL(mastodon)),
