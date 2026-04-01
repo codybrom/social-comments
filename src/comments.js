@@ -67,11 +67,14 @@ export default class SocialComments extends HTMLElement {
   }
 
   refresh() {
-    const comments = [
+    const allComments = [
       ...(this.comments.mastodon || []),
       ...(this.comments.bluesky || []),
       ...(this.comments.threads || []),
     ].sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
+
+    // Hide author's own thread pieces but keep any replies to them
+    const comments = promoteAuthorReplies(allComments);
 
     if (comments.length) {
       this.innerHTML = "";
@@ -241,6 +244,18 @@ export default class SocialComments extends HTMLElement {
         </article>
       `;
   }
+}
+
+function promoteAuthorReplies(comments) {
+  const result = [];
+  for (const comment of comments) {
+    if (comment.isMine) {
+      result.push(...promoteAuthorReplies(comment.replies));
+    } else {
+      result.push({ ...comment, replies: promoteAuthorReplies(comment.replies) });
+    }
+  }
+  return result;
 }
 
 function escapeHtml(text) {
